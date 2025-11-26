@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f878d200551c01e45ad17de664200943, type: 3}
+  m_Name: SmallShooter
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  <prefab>k__BackingField: {fileID: 588600215215881289, guid: 735e748d98a47ab478692a461bf861e1, type: 3}
+  <health>k__BackingField: 80
+  <damage>k__BackingField: 12
+  <attackCooldown>k__BackingField: 1
+  <speed>k__BackingField: 6
+  <sprite>k__BackingField: {fileID: 21300000, guid: 63b99da16e3f68941ab8d049a15fc7c6, type: 2}
+  <color>k__BackingField: {r: 1, g: 0.7466017, b: 0, a: 1}
+  <cost>k__BackingField: 1
+  <spawnChance>k__BackingField: 25
+  <spawnWeight>k__BackingField: 40
+  <hitbox>k__BackingField: {x: 1, y: 1}
+  <size>k__BackingField: {x: 0.8, y: 0.8}
+  <projectile>k__BackingField: {fileID: 663923135267862156, guid: 89ce10298d5384f4494220ce0f6db88e, type: 3}
+  <projectileSpeed>k__BackingField: 13
+  <projectileSize>k__BackingField: {x: 0.4, y: 0.4}
+  <projectileDuration>k__BackingField: 1.3
+  <component>k__BackingField: 0
