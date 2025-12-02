@@ -47,7 +47,7 @@ public class EnemyController : MonoBehaviour
         projectileSpeed = data.projectileSpeed;
         projectileSize = data.projectileSize;
         projectileDuration = data.projectileDuration;
-        if(health != null) health.Initialize(data.health, data.color);
+        if(health != null) health.Initialize(data.health, data.color, data.particleMaterial);
     }
     void Start()
     {

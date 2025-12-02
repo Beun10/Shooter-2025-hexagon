@@ -29,3 +29,4 @@ MonoBehaviour:
   <projectileSize>k__BackingField: {x: 1.3, y: 1.3}
   <projectileDuration>k__BackingField: 1.3
   <component>k__BackingField: 0
+  <particleMaterial>k__BackingField: {fileID: 2100000, guid: 88a6ce84d09a2904daa338043fbf4110, type: 2}

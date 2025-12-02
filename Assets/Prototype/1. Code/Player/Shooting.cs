@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] private GameObject Weapon;
     [SerializeField] private PlayerHealth health;
     [SerializeField] private ParticleSystem particle;
+    [SerializeField] private CameraRecoil cameraRecoil;
     //Primary
     [SerializeField] private GameObject primaryBullet;
     [SerializeField] private GameObject primaryAmmoSprite;
@@ -79,6 +80,7 @@ public class Shooting : MonoBehaviour
             whiteTimerPrimary = 0;
             primaryAmmoSprite.transform.localScale = new Vector3(primaryCurrentAmmo / (primaryMaxAmmo * primaryAmmoBuff), primaryCurrentAmmo / (primaryMaxAmmo * primaryAmmoBuff), 1);
             particle.Play();
+            cameraRecoil.Recoil();
             if (primaryCurrentAmmo <= 0) primaryReloadTimer = 0;
         }
         if (Input.GetButton("Fire3") && canShootSecondary)

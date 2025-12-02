@@ -21,4 +21,5 @@ public class EnemyData : ScriptableObject
     [field: SerializeField] public Vector2 projectileSize { get; private set; }
     [field: SerializeField] public float projectileDuration { get; private set; }
     [field: SerializeField] public bool component {  get; private set; }
+    [field: SerializeField] public Material particleMaterial { get; private set; }
 }
