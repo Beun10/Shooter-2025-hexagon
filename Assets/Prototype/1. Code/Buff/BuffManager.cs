@@ -7,10 +7,10 @@ using UnityEngine;
 public class BuffManager : MonoBehaviour
 {
     public static BuffManager Instance;
-    public int buffPoints;
+    public float buffPoints;
     [SerializeField] private int baseBuffPoints;
     [SerializeField] private GameObject buff;
-    public int levelBuffPoints;
+    public float levelBuffPoints;
     [SerializeField] private TextMeshPro pointsText;
     private List<GameObject> buffs = new List<GameObject>();
     [SerializeField] private List<BuffTierData> buffTiers = new List<BuffTierData>();

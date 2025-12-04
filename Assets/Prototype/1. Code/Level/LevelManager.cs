@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float outLevelCameraSize;
     [SerializeField] private float inLevelCameraSize;
+    [SerializeField] private float levelBuffPointsMultiplier;
     public float enemyHealthBuff = 1;
     public float enemyDamageBuff = 1;
     public int bossWavesInterval;
@@ -63,7 +64,7 @@ public class LevelManager : MonoBehaviour
     {
         levelIsOver = true;
         nextLevelButton.GetComponent<SpriteRenderer>().enabled = true;
-        buffManager.buffPoints += buffManager.levelBuffPoints;
+        buffManager.buffPoints += buffManager.levelBuffPoints + Mathf.Ceil(buffManager.levelBuffPoints * (levelBuffPointsMultiplier * currentLevel));
         buffManager.UpdatePoints();
         buffManager.ToggleButtons(true);
         player.GetComponent<PlayerHealth>().TakeDamage(-9999);

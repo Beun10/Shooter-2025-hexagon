@@ -15,10 +15,12 @@ public class BulletController : MonoBehaviour
     private float explosionRadius;
     [SerializeField] private CircleCollider2D hitbox;
     [SerializeField] private float explosionDuration;
+    [SerializeField] private float particleDuration;
     private Rigidbody2D rb;
     private GameObject pointer;
     private Vector2 target;
     private float timer;
+    private bool exploded;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize(float damage, float explosionRadius, float speed, float duration, float lifesteal)
     {
@@ -35,39 +37,55 @@ public class BulletController : MonoBehaviour
         pointer = GameObject.Find("Pointer");
         target = pointer.transform.position;
         timer = 0;
+        exploded = false;
     }
     private void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
         timer += Time.deltaTime;
         if (timer >= HitboxActivationDelay) GetComponent<CircleCollider2D>().enabled = true;
-        if (timer >= duration) Destroy(gameObject);
+        if (timer >= duration)
+        {
+            if (duration != particleDuration)
+            {
+                GetComponentInChildren<SpriteRenderer>().enabled = false;
+                GetComponent<CircleCollider2D>().enabled = false;
+                damage = 0;
+                timer = 0;
+                duration = particleDuration;
+            }
+            else Destroy(gameObject);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag.Equals("Wall")) Explosion();
-        if (collision.gameObject.tag.Equals("Enemy"))
-        {
-            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage, lifesteal);
-            Explosion();
-        }
+        if (!exploded && collision.gameObject.tag.Equals("Wall")) Explosion();
     }
 
     private void Explosion()
     {
         if (explosive)
         {
-            hitbox.isTrigger = true;
+            exploded = true;
             transform.localScale = new Vector3(explosionRadius, explosionRadius, 1);
             speed = 0;
             timer = 0;
             duration = explosionDuration;
+            GetComponent<ParticleSystem>().Play();
         }
-        else Destroy(gameObject);
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Enemy")) collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage, lifesteal);
+        if (!exploded && collision.gameObject.tag.Equals("Wall")) Explosion();
+        if (collision.gameObject.tag.Equals("Enemy"))
+        {
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage, lifesteal);
+            if(!exploded) Explosion();
+        }
     }
 }

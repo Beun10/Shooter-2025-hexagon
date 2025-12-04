@@ -25,7 +25,8 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-        particle.startColor = baseColor;
+        ParticleSystem.MainModule particleBaseColor = particle.main;
+        particleBaseColor.startColor = baseColor;
     }
 
     // Update is called once per frame

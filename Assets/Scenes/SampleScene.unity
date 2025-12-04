@@ -1823,7 +1823,7 @@ MonoBehaviour:
   damageRange: 12
   player: {fileID: 1237834430}
   damage: 0
-  lifesteal: 0.1
+  lifesteal: 0.02
 --- !u!58 &537107552
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6893,7 +6893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
   currentState: 0
-  enemyPointsLevelMultiplier: 1.6
+  enemyPointsLevelMultiplier: 1.25
   baseEnemyPoints: 40
   nextLevelButton: {fileID: 1713615254}
   levelText: {fileID: 1773169293}
@@ -6902,15 +6902,16 @@ MonoBehaviour:
   player: {fileID: 1237834430}
   mapExpansion: {x: 0.1, y: 0.1, z: 0}
   Walls: {fileID: 766478919}
-  moreWavesInterval: 1
-  levelEnemyHealthBuff: 0.1
-  levelEnemyDamageBuff: 0.05
+  moreWavesInterval: 2
+  levelEnemyHealthBuff: 0.2
+  levelEnemyDamageBuff: 0.1
   playerCamera: {fileID: 519420031}
   outLevelCameraSize: 7
   inLevelCameraSize: 9
+  levelBuffPointsMultiplier: 0.4
   enemyHealthBuff: 1
   enemyDamageBuff: 1
-  bossWavesInterval: 3
+  bossWavesInterval: 999
   enemies: []
   currentLevel: 0
   remainingEnemies: 0
@@ -6947,14 +6948,13 @@ MonoBehaviour:
   waveTimer: 5
   waveAmount: 2
   enemiesTypes:
-  - {fileID: 11400000, guid: ea53c6e406a06fd4781794615fed2e91, type: 2}
-  - {fileID: 11400000, guid: 420247e228b9aef4b8ec196fe4e80f11, type: 2}
-  - {fileID: 11400000, guid: 5ea5a58f0cb9bbb4f906ec70e73feb32, type: 2}
-  - {fileID: 11400000, guid: e4b2c51e1bbc58d429091a336ab0306b, type: 2}
-  - {fileID: 11400000, guid: 16d8a8fc300a4ab48ae150ab7c8e056e, type: 2}
-  - {fileID: 11400000, guid: a4b0dd8f8333e2a49ac4775f01440ae0, type: 2}
-  bosses:
-  - {fileID: 11400000, guid: a03d96df97cc20643995c55619232244, type: 2}
+  - {fileID: 11400000, guid: 5e42ad6dba9d0bd418e173e04ff8e898, type: 2}
+  - {fileID: 11400000, guid: c93656c26bb686b4fa68bbdb59b147f9, type: 2}
+  - {fileID: 11400000, guid: c6c1cc4c525f026499f1af64d04a9598, type: 2}
+  - {fileID: 11400000, guid: 5601cf0abceb13648bdb574a86ba3c84, type: 2}
+  - {fileID: 11400000, guid: b7705a7d86008804b964f9ef5b99cd6a, type: 2}
+  - {fileID: 11400000, guid: 11c4547e6a74c94438b31afda8f1cae2, type: 2}
+  bosses: []
   spawnPoints:
   - {fileID: 777379004}
   - {fileID: 1562907522}
@@ -6981,7 +6981,7 @@ MonoBehaviour:
   buffPoints: 0
   baseBuffPoints: 35
   buff: {fileID: 4239915711663667652, guid: 42bcfd7afd3d5f54ca1ad8260b20f943, type: 3}
-  levelBuffPoints: 18
+  levelBuffPoints: 20
   pointsText: {fileID: 340248613}
   buffTiers:
   - {fileID: 11400000, guid: 5e86b3e9c4996504ebc3623541144480, type: 2}
@@ -13227,7 +13227,7 @@ MonoBehaviour:
   primaryMaxAmmo: 35
   primaryReloadTime: 1.5
   primaryDamage: 20
-  primaryExplosionRadius: 0.25
+  primaryExplosionRadius: 0
   primaryBulletDuration: 2
   primaryBulletSpeed: 25
   primaryLifesteal: 0.05
@@ -13246,7 +13246,7 @@ MonoBehaviour:
   secondaryExplosionRadius: 4
   secondaryBulletDuration: 2
   secondaryBulletSpeed: 25
-  secondaryLifesteal: 0.05
+  secondaryLifesteal: 0.01
   secondaryDamageBuff: 1
   secondaryAmmoBuff: 1
   secondaryExplosionRadiusBuff: 1
@@ -13880,12 +13880,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraRecoil
   recoilRecovery: 10
-  shotRecoil: 0.2
+  shotRecoil: 0.3
   xBasePosition: 2
   yBasePosition: 0
-  yRecoilMultiplier: 2
+  yRecoilMultiplier: 1.5
   maxRecoil: 3
-  recoilRecoveryStopDuration: 0.7
+  recoilRecoveryStopDuration: 0.07
 --- !u!1 &1694179377
 GameObject:
   m_ObjectHideFlags: 0

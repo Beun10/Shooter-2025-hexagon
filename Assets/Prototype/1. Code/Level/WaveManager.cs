@@ -65,7 +65,7 @@ public class WaveManager : MonoBehaviour
         {
             Vector2 selectedSpawnPoint = spawnPoints[i % spawnPoints.Count].transform.position;
             EnemyData enemyType = RandomEnemy(enemiesTypes);
-            GameObject enemy = (Instantiate(enemyPrefab, selectedSpawnPoint, Quaternion.identity));
+            GameObject enemy = (Instantiate(enemyType.prefab, selectedSpawnPoint, Quaternion.identity));
             enemy.GetComponent<EnemyController>().Initialize(enemyType);
             remainingPoints -= enemyType.cost;
             levelManager.enemies.Add(enemy);

@@ -2,19 +2,19 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
     public float health { private get; set; }
     private float maxHealth;
-    private LevelManager levelManager;
     [SerializeField] private GameObject sprite;
     private Color baseColor;
     private float timer;
+    private bool isCore;
     [SerializeField] private float whiteDuration;
-    [SerializeField] private EnemyHealth parent;
+    [SerializeField] private EnemyController parent;
     [SerializeField] private ParticleSystem particle;
     [SerializeField] private float damageParticleBurst;
     private Gradient gradient = new Gradient();
@@ -24,13 +24,14 @@ public class EnemyHealth : MonoBehaviour
         PlayerHealth.Instance = GameObject.Find("Player").GetComponent<PlayerHealth>();
     }
 
-    public void Initialize(int health, Color baseColor, Material particleMaterial)
+    public void Initialize(int health, Color baseColor, Material particleMaterial, bool isCore)
     {
-        levelManager = GameObject.Find("GameManager").GetComponent<LevelManager>();
-        this.health = health * levelManager.enemyHealthBuff;
+        this.health = health * LevelManager.Instance.enemyHealthBuff;
         maxHealth = this.health;
+        this.isCore = isCore;
         this.baseColor = baseColor;
-        particle.startColor = baseColor;
+        ParticleSystem.MainModule particleBaseColor = GetComponent<ParticleSystem>().main;
+        particleBaseColor.startColor = baseColor;
         ParticleSystemRenderer renderer = particle.GetComponent<ParticleSystemRenderer>();
         renderer.material = particleMaterial;
         GradientColorKey[] colorKeys = new GradientColorKey[2];
@@ -71,8 +72,7 @@ public class EnemyHealth : MonoBehaviour
         timer = 0;
         if (health < 0)
         {
-            levelManager.enemies.Remove(this.gameObject);
-            if (levelManager.enemies.Count <= 0) levelManager.LevelCompleted();
+            parent.ComponentDestroyed(GetComponent<EnemyComponent>(), isCore);
             Destroy(gameObject);
         }
     }
