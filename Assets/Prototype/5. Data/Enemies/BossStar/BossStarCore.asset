@@ -9,24 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f878d200551c01e45ad17de664200943, type: 3}
-  m_Name: BossStar
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  <prefab>k__BackingField: {fileID: 4186108282731579955, guid: 863fba3804c992f4f8097f3c6174b780, type: 3}
-  <health>k__BackingField: 4250
-  <damage>k__BackingField: 40
+  m_Script: {fileID: 11500000, guid: 4c4a22f566aad4a41a13e13e3c7f59fc, type: 3}
+  m_Name: BossStarCore
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyComponentData
+  <health>k__BackingField: 2500
+  <damage>k__BackingField: 120
   <attackCooldown>k__BackingField: 0.7
-  <speed>k__BackingField: 6
   <sprite>k__BackingField: {fileID: 21300000, guid: 24a2c0d9e30dcba42a2c15c53f2d4942, type: 2}
-  <color>k__BackingField: {r: 0.59002674, g: 1, b: 0.06132078, a: 1}
-  <cost>k__BackingField: 0
-  <spawnChance>k__BackingField: 0
-  <spawnWeight>k__BackingField: 0
+  <color>k__BackingField: {r: 1, g: 0.068398155, b: 0, a: 1}
   <hitbox>k__BackingField: {x: 1, y: 1}
   <size>k__BackingField: {x: 1, y: 1}
   <projectile>k__BackingField: {fileID: 0}
   <projectileSpeed>k__BackingField: 0
   <projectileSize>k__BackingField: {x: 0, y: 0}
   <projectileDuration>k__BackingField: 0
-  <component>k__BackingField: 0
   <particleMaterial>k__BackingField: {fileID: 2100000, guid: f795b00cafcad6b4ea064cf7f4f085de, type: 2}
+  <isCore>k__BackingField: 1

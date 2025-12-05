@@ -5128,10 +5128,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
+    - - {x: 0, y: 0.25}
+      - {x: -0.5, y: 0}
+      - {x: 0, y: -0.25}
+      - {x: 0.5, y: 0}
   m_UseDelaunayMesh: 0
 --- !u!61 &395825740430518095
 BoxCollider2D:
@@ -10216,10 +10216,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
+    - - {x: -0.6, y: 0}
+      - {x: 0, y: -0.6}
+      - {x: 0.6, y: 0}
+      - {x: 0, y: 0.6}
   m_UseDelaunayMesh: 0
 --- !u!1 &5729520789867437874
 GameObject:

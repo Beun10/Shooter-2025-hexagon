@@ -6902,16 +6902,16 @@ MonoBehaviour:
   player: {fileID: 1237834430}
   mapExpansion: {x: 0.1, y: 0.1, z: 0}
   Walls: {fileID: 766478919}
-  moreWavesInterval: 2
-  levelEnemyHealthBuff: 0.2
-  levelEnemyDamageBuff: 0.1
+  moreWavesInterval: 3
+  levelEnemyHealthBuff: 0.24
+  levelEnemyDamageBuff: 0.12
   playerCamera: {fileID: 519420031}
   outLevelCameraSize: 7
   inLevelCameraSize: 9
   levelBuffPointsMultiplier: 0.4
   enemyHealthBuff: 1
   enemyDamageBuff: 1
-  bossWavesInterval: 999
+  bossWavesInterval: 3
   enemies: []
   currentLevel: 0
   remainingEnemies: 0
@@ -6954,7 +6954,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5601cf0abceb13648bdb574a86ba3c84, type: 2}
   - {fileID: 11400000, guid: b7705a7d86008804b964f9ef5b99cd6a, type: 2}
   - {fileID: 11400000, guid: 11c4547e6a74c94438b31afda8f1cae2, type: 2}
-  bosses: []
+  - {fileID: 11400000, guid: c1c8881471f6f9b4e899be99836fbc72, type: 2}
+  bosses:
+  - {fileID: 11400000, guid: 40452c6c50c090f40a21f440093bdf8f, type: 2}
   spawnPoints:
   - {fileID: 777379004}
   - {fileID: 1562907522}

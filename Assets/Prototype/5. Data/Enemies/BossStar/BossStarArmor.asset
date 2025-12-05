@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c4a22f566aad4a41a13e13e3c7f59fc, type: 3}
-  m_Name: SmallShooterCore
+  m_Name: BossStarArmor
   m_EditorClassIdentifier: Assembly-CSharp::EnemyComponentData
-  <health>k__BackingField: 60
-  <damage>k__BackingField: 20
-  <attackCooldown>k__BackingField: 1
+  <health>k__BackingField: 800
+  <damage>k__BackingField: 40
+  <attackCooldown>k__BackingField: 0.5
   <sprite>k__BackingField: {fileID: 21300000, guid: 63b99da16e3f68941ab8d049a15fc7c6, type: 2}
-  <color>k__BackingField: {r: 0, g: 1, b: 0.4331119, a: 1}
+  <color>k__BackingField: {r: 0.7220752, g: 1, b: 0, a: 1}
   <hitbox>k__BackingField: {x: 1, y: 1}
   <size>k__BackingField: {x: 1, y: 1}
   <projectile>k__BackingField: {fileID: 663923135267862156, guid: 89ce10298d5384f4494220ce0f6db88e, type: 3}
-  <projectileSpeed>k__BackingField: 10
-  <projectileSize>k__BackingField: {x: 0.5, y: 0.5}
+  <projectileSpeed>k__BackingField: 14
+  <projectileSize>k__BackingField: {x: 1.1, y: 1.1}
   <projectileDuration>k__BackingField: 10
   <particleMaterial>k__BackingField: {fileID: 2100000, guid: 88a6ce84d09a2904daa338043fbf4110, type: 2}
-  <isCore>k__BackingField: 1
+  <isCore>k__BackingField: 0

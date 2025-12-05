@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SecondaryReloadTimeReductionTier4
   m_EditorClassIdentifier: Assembly-CSharp::BuffData
   <cost>k__BackingField: 10
-  <colorSet>k__BackingField: {fileID: 11400000, guid: bec10d2c71bf96944986171046289032, type: 2}
+  <colorSet>k__BackingField: {fileID: 11400000, guid: 223edf414479cf1488ea71a92b32bebe, type: 2}
   <description>k__BackingField: +55% Secondary Reload Time Reduction
   <fontSize>k__BackingField: 0.34
   <healthBuff>k__BackingField: 0

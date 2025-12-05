@@ -38,6 +38,8 @@ public class BulletController : MonoBehaviour
         target = pointer.transform.position;
         timer = 0;
         exploded = false;
+        float angle = Mathf.Atan2(target.y - transform.position.y, target.x - transform.position.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
     private void Update()
     {
