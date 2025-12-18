@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -6,13 +8,16 @@ public class EnemyComponent : MonoBehaviour
     [SerializeField] private EnemyComponentData data;
     private float damage;
     private float attackCooldown;
-    private GameObject player;
-    private float timer;
+    private float attackTimer;
     private GameObject projectile;
     private float projectileSpeed;
     private Vector3 projectileSize;
     private float projectileDuration;
-    private bool spawned;
+    private bool spawned = false;
+    private float heal;
+    private float healingSpeed;
+    private EnemyController enemyController;
+    private float decayRate;
     [SerializeField] private EnemyHealth health;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private SpriteRenderer healthSpriteRenderer;
@@ -26,18 +31,20 @@ public class EnemyComponent : MonoBehaviour
         if (spriteRenderer != null) spriteRenderer.sprite = data.sprite;
         if (data.color != null) healthSpriteRenderer.color = data.color;
         if (data.sprite != null) healthSpriteRenderer.sprite = data.sprite;
-        transform.localScale = data.size;
+        //transform.localScale = data.size;
         projectile = data.projectile;
         projectileSpeed = data.projectileSpeed;
         projectileSize = data.projectileSize;
         projectileDuration = data.projectileDuration;
-        if (health != null) health.Initialize(data.health, data.color, data.particleMaterial, data.isCore);
+        if (health != null) health.Initialize(data.health, data.color, data.particleMaterial, data.isCore, data.primaryDamageMultiplier, data.secondaryDamageMultiplier);
+        this.healingSpeed = data.healingSpeed * LevelManager.Instance.enemyHealthBuff;
+        this.decayRate = data.decayRate * LevelManager.Instance.enemyHealthBuff;
         spawned = true;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        spawned = false;
+        enemyController = GetComponentInParent<EnemyController>();
     }
 
     // Update is called once per frame
@@ -45,33 +52,44 @@ public class EnemyComponent : MonoBehaviour
     {
         if (spawned)
         {
-            if (timer < attackCooldown) timer += Time.deltaTime;
-            if (projectile != null && timer >= attackCooldown && spawned)
+            if ((attackTimer < attackCooldown) && enemyController.cannotAttackDuration <= 0) attackTimer += Time.deltaTime;
+            if (projectile != null && attackTimer >= attackCooldown && spawned)
             {
                 GameObject newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
                 newProjectile.GetComponent<EnemyProjectileController>().Initialize(projectileSpeed, projectileDuration, damage, projectileSize);
-                timer = 0;
+                attackTimer = 0;
             }
+            if (heal > 0)
+            {
+                if(healingSpeed * Time.deltaTime < heal) health.Heal(healingSpeed * Time.deltaTime);
+                else health.Heal(heal);
+                heal -= healingSpeed * Time.deltaTime;
+                if (heal < 0) heal = 0;
+            }
+            if (decayRate > 0) health.TakeDamage(decayRate * Time.deltaTime, 0, GameManager.DamageType.Other);
         }
     }
-    public void Spawning()
+    public void Spawning(EnemyComponentData data)
     {
+        if (this.data == null) this.data = data;
         spawned = true;
         Initialize();
     }
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Player") && timer >= attackCooldown && spawned)
-        {
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
-            timer = 0;
-        }
-    }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("PassiveDamage") && collision.GetComponent<PassiveDamage>().damage > 0)
+        if (collision.gameObject.CompareTag("Player") && attackTimer >= attackCooldown && spawned)
         {
-            health.TakeDamage(collision.GetComponent<PassiveDamage>().damage * Time.deltaTime, collision.GetComponent<PassiveDamage>().lifesteal);
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+            attackTimer = 0;
         }
+        if (collision.gameObject.CompareTag("PassiveDamage") && collision.GetComponent<PassiveDamage>().damage > 0)
+        {
+            health.TakeDamage(collision.GetComponent<PassiveDamage>().damage * Time.deltaTime, collision.GetComponent<PassiveDamage>().lifesteal, GameManager.DamageType.Other);
+        }
+    }
+    public void Heal(float heal, float percentHeal)
+    {
+        this.heal += heal;
+        this.heal += health.maxHealth * percentHeal;
     }
 }

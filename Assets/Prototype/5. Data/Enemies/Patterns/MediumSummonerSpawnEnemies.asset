@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53cc8351a740ab4449fb9818abfe0763, type: 3}
+  m_Name: MediumSummonerSpawnEnemies
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnEnemiesPattern
+  patternName: 
+  enemies:
+  - {fileID: 11400000, guid: c93656c26bb686b4fa68bbdb59b147f9, type: 2}
+  - {fileID: 11400000, guid: 5601cf0abceb13648bdb574a86ba3c84, type: 2}
+  - {fileID: 11400000, guid: 11c4547e6a74c94438b31afda8f1cae2, type: 2}
+  enemyPoints: 9
+  useNormalSpawnPoints: 0

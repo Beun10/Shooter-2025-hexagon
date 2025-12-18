@@ -18,6 +18,7 @@ public class BuffManager : MonoBehaviour
     [SerializeField] private Vector2 buffPosition;
     [SerializeField] private Vector2 buffOffset;
     [SerializeField] private int buffCount;
+    [SerializeField] private List<GameObject> statText;
 
     private void Awake()
     {
@@ -57,6 +58,7 @@ public class BuffManager : MonoBehaviour
     public void UpdatePoints()
     {
         pointsText.text = buffPoints.ToString() + " Points";
+        foreach(GameObject text in statText) text.GetComponent<StatText>().UpdateText();
     }
     public void ToggleButtons(bool active)
     {

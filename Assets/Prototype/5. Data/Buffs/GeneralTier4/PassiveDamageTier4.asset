@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PassiveDamageTier4
   m_EditorClassIdentifier: Assembly-CSharp::BuffData
   <cost>k__BackingField: 10
-  <colorSet>k__BackingField: {fileID: 11400000, guid: f9b9f43c919d3b8469d84b78d5a62844, type: 2}
+  <colorSet>k__BackingField: {fileID: 11400000, guid: 2c67660e684ace5458e7e0c388e42486, type: 2}
   <description>k__BackingField: +18 Passive Damage/s
   <fontSize>k__BackingField: 0.4
   <healthBuff>k__BackingField: 0
@@ -23,6 +23,9 @@ MonoBehaviour:
   <primaryAmmoBuff>k__BackingField: 0
   <primaryExplosionRadiusBuff>k__BackingField: 0
   <primaryLifestealBuff>k__BackingField: 0
+  <primaryCoreDamageBuff>k__BackingField: 0
   <secondaryDamageBuff>k__BackingField: 0
   <secondaryAmmoBuff>k__BackingField: 0
   <secondaryExplosionRadiusBuff>k__BackingField: 0
+  <secondaryReloadTimeReductionBuff>k__BackingField: 0
+  <secondaryDamageOverTimeBuff>k__BackingField: 0

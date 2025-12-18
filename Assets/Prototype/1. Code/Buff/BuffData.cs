@@ -16,9 +16,11 @@ public class BuffData : ScriptableObject
     [field: SerializeField] public float primaryAmmoBuff { get; private set; }
     [field: SerializeField] public float primaryExplosionRadiusBuff { get; private set; }
     [field: SerializeField] public float primaryLifestealBuff {  get; private set; }
+    [field:SerializeField] public float primaryCoreDamageBuff {  get; private set; }
     //Secondary
     [field :SerializeField] public float secondaryDamageBuff { get; private set; }
     [field: SerializeField] public float secondaryAmmoBuff { get; private set; }
     [field: SerializeField] public float secondaryExplosionRadiusBuff { get; private set; }
     [field: SerializeField] public float secondaryReloadTimeReductionBuff { get; private set; }
+    [field: SerializeField] public float secondaryDamageOverTimeBuff { get; private set; }
 }

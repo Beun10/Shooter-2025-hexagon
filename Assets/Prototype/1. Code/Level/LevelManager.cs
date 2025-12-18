@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class LevelManager : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private float outLevelCameraSize;
     [SerializeField] private float inLevelCameraSize;
     [SerializeField] private float levelBuffPointsMultiplier;
+    [SerializeField] private List<GameObject> statText;
+    [SerializeField] private List<GameObject> statTextBackground;
     public float enemyHealthBuff = 1;
     public float enemyDamageBuff = 1;
     public int bossWavesInterval;
@@ -44,6 +47,7 @@ public class LevelManager : MonoBehaviour
         currentLevel = 0;
         levelIsOver = true;
         playerCamera.orthographicSize = outLevelCameraSize;
+        foreach(GameObject text in statText) text.GetComponent<StatText>().UpdateText();
     }
     public void NextLevel()
     {
@@ -56,14 +60,17 @@ public class LevelManager : MonoBehaviour
         enemyPoints *= enemyPointsLevelMultiplier;
         enemyPoints = Mathf.RoundToInt(enemyPoints);
         Walls.transform.localScale += mapExpansion;
-        waveManager.SpawningCoroutine = StartCoroutine(waveManager.SpawningEnemies(enemyPoints));
+        waveManager.SpawningCoroutine = StartCoroutine(waveManager.SpawningEnemies(enemyPoints, waveManager.enemiesTypes, waveManager.waveAmount, true, WaveManager.Instance.spawnPoints, true));
         playerCamera.orthographicSize = inLevelCameraSize;
+        foreach (GameObject text in statText) text.GetComponent<TextMeshProUGUI>().text = "";
+        foreach (GameObject background in statTextBackground) background.GetComponent<Image>().SetEnabled(false);
     }
 
     public void LevelCompleted()
     {
         levelIsOver = true;
         nextLevelButton.GetComponent<SpriteRenderer>().enabled = true;
+        nextLevelButton.GetComponent<BoxCollider2D>().enabled = true;
         buffManager.buffPoints += buffManager.levelBuffPoints + Mathf.Ceil(buffManager.levelBuffPoints * (levelBuffPointsMultiplier * currentLevel));
         buffManager.UpdatePoints();
         buffManager.ToggleButtons(true);
@@ -71,6 +78,8 @@ public class LevelManager : MonoBehaviour
         enemyHealthBuff += levelEnemyHealthBuff;
         enemyDamageBuff += levelEnemyDamageBuff;
         playerCamera.orthographicSize = outLevelCameraSize;
+        foreach (GameObject text in statText) text.GetComponent<StatText>().UpdateText();
+        foreach (GameObject background in statTextBackground) background.GetComponent<Image>().SetEnabled(true);
     }
 
     public enum LevelState

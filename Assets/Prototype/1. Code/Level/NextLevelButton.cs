@@ -6,6 +6,7 @@ public class NextLevelButton : MonoBehaviour
     [SerializeField] private Color baseColor;
     [SerializeField] private Color interactableColor;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private BoxCollider2D boxCollider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +28,7 @@ public class NextLevelButton : MonoBehaviour
         {
             LevelManager.Instance.NextLevel();
             spriteRenderer.enabled = false;
+            boxCollider.enabled = false;
         }
     }
 }

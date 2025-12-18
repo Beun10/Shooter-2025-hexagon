@@ -8,13 +8,13 @@ public class Timer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        timer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer = Time.time;
+        timer += Time.deltaTime;
         timerText.text = timer.ToString();
     }
 }

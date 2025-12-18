@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuffData
   <cost>k__BackingField: 7
   <colorSet>k__BackingField: {fileID: 11400000, guid: 55f8524671d64d548b8207f79653bd27, type: 2}
-  <description>k__BackingField: +82% Secondary Explosion Radius
+  <description>k__BackingField: +61% Secondary Explosion Radius
   <fontSize>k__BackingField: 0.35
   <healthBuff>k__BackingField: 0
   <passiveDamageBuff>k__BackingField: 0
@@ -25,5 +25,5 @@ MonoBehaviour:
   <primaryLifestealBuff>k__BackingField: 0
   <secondaryDamageBuff>k__BackingField: 0
   <secondaryAmmoBuff>k__BackingField: 0
-  <secondaryExplosionRadiusBuff>k__BackingField: 0.82
+  <secondaryExplosionRadiusBuff>k__BackingField: 0.61
   <secondaryReloadTimeReductionBuff>k__BackingField: 0

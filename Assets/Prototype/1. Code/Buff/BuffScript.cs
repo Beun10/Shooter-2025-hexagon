@@ -40,10 +40,13 @@ public class BuffScript : MonoBehaviour
             Shooting.Instance.primaryAmmoBuff += data.primaryAmmoBuff;
             Shooting.Instance.primaryExplosionRadiusBuff += data.primaryExplosionRadiusBuff;
             Shooting.Instance.primaryLifesteal += data.primaryLifestealBuff;
+            Shooting.Instance.primaryCoreDamageBuff += data.primaryCoreDamageBuff;
             Shooting.Instance.secondaryDamageBuff += data.secondaryDamageBuff;
             Shooting.Instance.secondaryAmmoBuff += data.secondaryAmmoBuff;
             Shooting.Instance.secondaryExplosionRadiusBuff += data.secondaryExplosionRadiusBuff;
+            if (Shooting.Instance.secondaryExplosionRadiusBuff > Shooting.Instance.maxSecondaryExplosionRadius) Shooting.Instance.secondaryExplosionRadiusBuff = Shooting.Instance.maxSecondaryExplosionRadius;
             Shooting.Instance.secondaryReloadTimeReductionBuff += data.secondaryReloadTimeReductionBuff;
+            Shooting.Instance.secondaryDamageOverTime += data.secondaryDamageOverTimeBuff;
             Shooting.Instance.Reload();
             button.interactable = true;
             BuffManager.Instance.UpdatePoints();

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SecondaryReloadTimeReductionTier3
   m_EditorClassIdentifier: Assembly-CSharp::BuffData
   <cost>k__BackingField: 7
-  <colorSet>k__BackingField: {fileID: 11400000, guid: bec10d2c71bf96944986171046289032, type: 2}
+  <colorSet>k__BackingField: {fileID: 11400000, guid: 55f8524671d64d548b8207f79653bd27, type: 2}
   <description>k__BackingField: +35% Secondary Reload Time Reduction
   <fontSize>k__BackingField: 0.34
   <healthBuff>k__BackingField: 0
@@ -23,7 +23,9 @@ MonoBehaviour:
   <primaryAmmoBuff>k__BackingField: 0
   <primaryExplosionRadiusBuff>k__BackingField: 0
   <primaryLifestealBuff>k__BackingField: 0
+  <primaryCoreDamageBuff>k__BackingField: 0
   <secondaryDamageBuff>k__BackingField: 0
   <secondaryAmmoBuff>k__BackingField: 0
   <secondaryExplosionRadiusBuff>k__BackingField: 0
   <secondaryReloadTimeReductionBuff>k__BackingField: 0.5
+  <secondaryDamageOverTimeBuff>k__BackingField: 0

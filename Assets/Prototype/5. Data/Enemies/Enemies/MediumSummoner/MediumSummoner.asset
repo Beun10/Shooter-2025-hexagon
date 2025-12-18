@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f878d200551c01e45ad17de664200943, type: 3}
+  m_Name: MediumSummoner
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  <prefab>k__BackingField: {fileID: 7724336278811178003, guid: 17a1ef237b4f26d4c8fbb9ee536c892b, type: 3}
+  <speed>k__BackingField: 5
+  <cost>k__BackingField: 9
+  <spawnChance>k__BackingField: 30
+  <spawnWeight>k__BackingField: 30
+  <size>k__BackingField: {x: 2, y: 2}
+  <component>k__BackingField: 0
+  <rotatingSpeed>k__BackingField: 0
+  <armor>k__BackingField: {fileID: 11400000, guid: f9aa805125063ee4080696e995b5de0f, type: 2}
+  <core>k__BackingField: {fileID: 11400000, guid: 039e9500afaa727439851b3261a5f94e, type: 2}
+  <minimalDistance>k__BackingField: 12
+  <patterns>k__BackingField:
+  - {fileID: 11400000, guid: 6ac853c48f702674d84955e8a06bbfaf, type: 2}
+  - {fileID: 11400000, guid: 6ac853c48f702674d84955e8a06bbfaf, type: 2}
+  - {fileID: 11400000, guid: 6ac853c48f702674d84955e8a06bbfaf, type: 2}
+  - {fileID: 11400000, guid: 66365596e4f10764cbc77076218573ed, type: 2}
+  <firstPatternDelay>k__BackingField: 6
+  <patternCooldown>k__BackingField: 6
+  <patternCooldownVariation>k__BackingField: {x: -2, y: 2}

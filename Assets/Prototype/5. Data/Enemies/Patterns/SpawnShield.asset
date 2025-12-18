@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f50222cab590b47a840ff22ef7f1b3, type: 3}
+  m_Name: SpawnShield
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnShieldPattern
+  patternName: 
+  shieldPrefab: {fileID: 7724336278811178003, guid: b9369bd3d044c6247845cca2945f009c, type: 3}
+  shieldData: {fileID: 11400000, guid: 9c15f4277005ff8499b9a7789ea042b5, type: 2}

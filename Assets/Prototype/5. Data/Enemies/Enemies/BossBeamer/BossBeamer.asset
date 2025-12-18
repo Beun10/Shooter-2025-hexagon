@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f878d200551c01e45ad17de664200943, type: 3}
+  m_Name: BossBeamer
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  <prefab>k__BackingField: {fileID: 1741226320642193136, guid: 399248de60183814c8787400d7669ec4, type: 3}
+  <speed>k__BackingField: 3
+  <cost>k__BackingField: 0
+  <spawnChance>k__BackingField: 100
+  <spawnWeight>k__BackingField: 0
+  <size>k__BackingField: {x: 1, y: 1}
+  <component>k__BackingField: 0
+  <rotatingSpeed>k__BackingField: 1.5
+  <armor>k__BackingField: {fileID: 11400000, guid: d6ae81794c071934aabf8dc23e5c740c, type: 2}
+  <core>k__BackingField: {fileID: 11400000, guid: 801c7c5b21502924eaa6fb5a77be9bd8, type: 2}
+  <minimalDistance>k__BackingField: 0
+  <patterns>k__BackingField:
+  - {fileID: 11400000, guid: ec505d413da553f498d10027b8f9ac26, type: 2}
+  <firstPatternDelay>k__BackingField: 20
+  <patternCooldown>k__BackingField: 30
+  <patternCooldownVariation>k__BackingField: {x: -5, y: 10}

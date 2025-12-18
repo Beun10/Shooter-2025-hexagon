@@ -79,8 +79,10 @@ MonoBehaviour:
   HitboxActivationDelay: 0.03
   explosive: 1
   hitbox: {fileID: 2143913722231395274}
-  explosionDuration: 0.02
+  explosionDuration: 0.001
   particleDuration: 0.3
+  damageType: 0
+  prefab: {fileID: 0}
 --- !u!58 &2143913722231395274
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -116,7 +118,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.1
 --- !u!198 &658487867468385707
 ParticleSystem:
   m_ObjectHideFlags: 0

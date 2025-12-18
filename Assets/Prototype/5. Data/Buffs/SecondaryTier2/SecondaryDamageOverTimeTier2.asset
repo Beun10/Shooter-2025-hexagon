@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6f805547095c640b27c3bd29040e0a, type: 3}
+  m_Name: SecondaryDamageOverTimeTier2
+  m_EditorClassIdentifier: Assembly-CSharp::BuffData
+  <cost>k__BackingField: 5
+  <colorSet>k__BackingField: {fileID: 11400000, guid: 6c2b143e51006484fbd28d775d89eb85, type: 2}
+  <description>k__BackingField: +38 Secondary Damage Over Time/s
+  <fontSize>k__BackingField: 0.34
+  <healthBuff>k__BackingField: 0
+  <passiveDamageBuff>k__BackingField: 0
+  <primaryDamageBuff>k__BackingField: 0
+  <primaryFireRateBuff>k__BackingField: 0
+  <primaryAmmoBuff>k__BackingField: 0
+  <primaryExplosionRadiusBuff>k__BackingField: 0
+  <primaryLifestealBuff>k__BackingField: 0
+  <primaryCoreDamageBuff>k__BackingField: 0
+  <secondaryDamageBuff>k__BackingField: 0
+  <secondaryAmmoBuff>k__BackingField: 0
+  <secondaryExplosionRadiusBuff>k__BackingField: 0
+  <secondaryReloadTimeReductionBuff>k__BackingField: 0
+  <secondaryDamageOverTimeBuff>k__BackingField: 38

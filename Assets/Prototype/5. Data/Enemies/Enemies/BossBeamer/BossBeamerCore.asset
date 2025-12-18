@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c4a22f566aad4a41a13e13e3c7f59fc, type: 3}
+  m_Name: BossBeamerCore
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyComponentData
+  <health>k__BackingField: 5000
+  <damage>k__BackingField: 60
+  <attackCooldown>k__BackingField: 0.7
+  <sprite>k__BackingField: {fileID: 21300000, guid: 24a2c0d9e30dcba42a2c15c53f2d4942, type: 2}
+  <color>k__BackingField: {r: 0, g: 0.003575325, b: 1, a: 1}
+  <hitbox>k__BackingField: {x: 1, y: 1}
+  <size>k__BackingField: {x: 0.6, y: 2}
+  <projectile>k__BackingField: {fileID: 0}
+  <projectileSpeed>k__BackingField: 0
+  <projectileSize>k__BackingField: {x: 0, y: 0}
+  <projectileDuration>k__BackingField: 0
+  <particleMaterial>k__BackingField: {fileID: 2100000, guid: f795b00cafcad6b4ea064cf7f4f085de, type: 2}
+  <isCore>k__BackingField: 1
+  <primaryDamageMultiplier>k__BackingField: 1
+  <secondaryDamageMultiplier>k__BackingField: 0.75

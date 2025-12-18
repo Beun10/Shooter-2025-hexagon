@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53cc8351a740ab4449fb9818abfe0763, type: 3}
+  m_Name: BossBeamerSpawnEnemies
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnEnemiesPattern
+  patternName: 
+  enemies:
+  - {fileID: 11400000, guid: b7705a7d86008804b964f9ef5b99cd6a, type: 2}
+  - {fileID: 11400000, guid: 11c4547e6a74c94438b31afda8f1cae2, type: 2}
+  - {fileID: 11400000, guid: c1c8881471f6f9b4e899be99836fbc72, type: 2}
+  - {fileID: 11400000, guid: 292ced99c4168a94e986f745c150b74a, type: 2}
+  enemyPoints: 15
+  useNormalSpawnPoints: 1
